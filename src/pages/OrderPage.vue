@@ -1,26 +1,21 @@
 <template>
-  <button
-    style="background-color: mediumaquamarine; color: #000; margin-bottom: 20px"
-    @click="$router.push('/')"
-  >
-    ← Go Home
-  </button>
-
-  <div class="container" style="width: 350px">
+  <div class="container" style="width: 343px">
     <div
       style="
         color: black;
         font-weight: bold;
-        padding: 5px;
+        padding: 10px;
         padding-left: 20px;
-        background-color: #e5e4e2;
+        background-color: #E8E8E8;
       "
     >
       <span style="font-size: x-small; font-weight: 900">˂</span>
-      <span style="font-size: 13px; margin-left: 6px">Your Orders</span>
+      <span style="font-size: 13px; margin-left: 10px;">Your Orders</span>
     </div>
     <div class="card">
-      <h3 style="color: black; margin-top: -6px; font-size: 14px;">Order Details</h3>
+      <h3 style="color: black; margin-top: -6px; font-size: 14px">
+        Order Details
+      </h3>
 
       <div v-if="isEditing" class="edit-section">
         <label>
@@ -69,13 +64,13 @@
 
       <div v-else class="view-section">
         <div class="order-box">
-          <div style="margin-bottom: 4px;">
+          <div style="margin-bottom: 4px">
             <span style="color: #808080">Order placed:</span>
             <span style="margin-left: 30px">{{
               formatDate(formData.date)
             }}</span>
           </div>
-          <div style="margin-bottom: 4px;">
+          <div style="margin-bottom: 4px">
             <span style="color: grey">Order number:</span>
             <span style="margin-left: 23px">{{ formData.orderNumber }}</span>
           </div>
@@ -87,10 +82,12 @@
               display: flex;
               justify-content: space-between;
               align-items: center;
+              margin-top: 10px;
+              margin-bottom: 10px;
             "
           >
             <span style="margin-left: 20px">Download Invoice</span>
-            <span style="font-weight: bolder; margin-right: 10px">></span>
+            <span style="font-weight: bolder; margin-right: 18px">></span>
           </div>
           <hr
             style="border: none; border-top: 1px solid #d3d3d3; margin: 6px 0"
@@ -207,10 +204,24 @@
         </div>
 
         <hr
-          style="border: none; border-top: 1px solid #d3d3d3; margin: 7px 0;"
+          style="border: none; border-top: 1px solid #d3d3d3; margin: 7px 0"
         />
-
-        <button class="edit-btn" @click="isEditing = true">Edit</button>
+        <div style="margin-top: 10px;">
+          <button class="edit-btn" @click="isEditing = true">Edit</button>
+          <button
+            style="
+              border: none;
+              border-top: 1px solid #d3d3d3;
+              margin: 2px 0;
+              padding: 5px;
+              background: yellowgreen;
+              margin-left: 120px;
+            "
+            @click="$router.push('/')"
+          >
+            ← Go Home
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -314,7 +325,7 @@ body {
 .summary-box {
   border: 1px solid #ddd;
   border-radius: 6px;
-  padding: 12px;
+  padding: 14px;
   margin-top: 10px;
   color: black;
   font-size: 12px;
@@ -322,6 +333,7 @@ body {
 .multiline {
   white-space: pre-line;
   font-size: 12px;
+  line-height: 1.25;
 }
 
 .product-info {
@@ -350,8 +362,9 @@ body {
 .invoice-btn,
 .edit-btn {
   margin-top: 60px;
+  width: 80px;
   padding: 6px 12px;
-  background: #ffd814;
+  background-color: yellowgreen;
   border: none;
   border-radius: 4px;
   cursor: pointer;
