@@ -6,7 +6,7 @@
     ← Go Home
   </button>
 
-  <div class="container">
+  <div class="container" style="width: 350px">
     <div
       style="
         color: black;
@@ -273,8 +273,7 @@ body {
   padding: 20px;
 }
 .container {
-  width: 345px;
-  margin: 0 auto; /* centers horizontally */
+  margin: 10 auto; /* centers horizontally */
   background: white; /* optional, helps visualize */
   padding: 0px; /* optional, some spacing inside */
   box-sizing: border-box;
